@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Caveat:wght@400..700&family=Kalam:wght@300;400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 200;
+}
+
+body{
+    background-color: white;
+    color: black;
+}
+
+header{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+
+    .header-container{
+        max-width: 1400px;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            margin: 20px;
+            
+            a{
+                color: black;
+                text-decoration: none;
+                font-size: 24px;
+            }
+        }
+        
+        nav {
+            ul {
+                list-style: none;
+                display: flex;
+        
+                li {
+                    margin: 0 10px;
+        
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        padding: 5px 10px;
+                        transition: 0.3s;
+        
+                        &:hover,
+                        &:active {
+                            font-weight: 400;
+                        }
+                    }
+                }
+        
+                .social-icons {
+                    a {
+                        color: black;
+                        text-decoration: none;
+        
+                        &:hover {
+                            color: #aaa;
+                        }
+                    }
+                }
+            }
+        
+            @media only screen and (max-width: 900px) {
+                display: none;
+            }
+        }
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    h1{
+        font-size: 35px;
+        font-weight: 300;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: 300;
+        margin: 80px 0 20px;
+    }
+
+    hr {
+        margin: 0 0 20px;
+        width: 170px;
+    }
+
+    section{
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 1300px;
+        min-height: 100vh;
+        margin: 0 auto;
+    }
+
+    .curves{
+        position: relative;
+        top: -50px;
+        width: 100%;
+    
+        .curve-element{
+            position: absolute;
+            width: 100%;
+            top: -200px;
+            left: 0;
+            width: 100%;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        .top{
+            top: 0;
+            z-index: -1;
+        }
+
+        .medium{
+            top: 0;
+            z-index: -2;
+        }
+        
+        .bottom{
+            top: 0;
+            z-index: -3;
+        }
+
+        .square{
+            position:relative;
+            top: -49px;
+            z-index: -1;
+            width: 100%;
+            height: 50px;
+            background-color: white;
+        }
+    }
+
+    .separation-curve{
+        height: 30vh;
+        
+
+        @media only screen and (max-width: 900px) {
+            height: 20vh;
+            top: 50px;
+        }
+    }
+
+    .intro-container{
+        height: 100vh;
+
+        .intro-text {
+            margin-top: 15vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media only screen and (max-width: 900px) {
+                margin-top: 40vh;
+            }
+        
+            .welcome-desktop {
+                text-align: center;
+        
+                @media only screen and (max-width: 899px) {
+                    display: none;
+                }
+            }
+
+            .welcome-mobile {
+                text-align: center;
+        
+                @media only screen and (min-width: 900px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #portfolio-container {
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+    
+            li {
+                margin: 0 5px 10px;
+    
+                // a {
+                //     color: black;
+                //     text-decoration: none;
+                //     transition: 0.3s;
+
+    
+                //     &:hover,
+                //     &:active {
+                //         font-weight: 400;
+                //     }
+                // }
+            }
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 20vw);
+            grid-template-rows: repeat(3, 14vw);
+            gap: 10px;
+
+            @media only screen and (min-width: 1300px) {
+                grid-template-columns: repeat(4, 317.5px);
+                grid-template-rows: repeat(4, 222.39px);
+                gap: 10px;
+            }
+
+            @media only screen and (max-width: 900px) {
+                grid-template-columns: repeat(3, 30vw);
+                grid-template-rows: repeat(5, 21vw);
+                gap: 10px;
+            }
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: repeat(2, 45vw);
+                grid-template-rows: repeat(7, 31.5vw);
+                gap: 10px;
+            }
+
+            .grid-item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+                position: relative;
+                cursor: pointer;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    max-height: 100%;
+                    object-fit: cover;
+                }
+
+                .label-black{
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    color: transparent;
+                    text-align: center;
+
+                    hr{
+                        position:absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+
+                    h1{
+                        margin-top: 70px;
+                        font-size: 20px;
+                        font-weight: 300;
+                    }
+
+                    h2{
+                        margin-top: 40px;
+                        font-size: 15px;
+                        font-weight: 200;
+                    }
+                    
+                    &:hover{
+                        background-color: rgba(0, 0, 0, 0.75);
+                        color: white;
+                        transition: 0.4s ease;
+                    }
+                }
+            }
+
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                padding-top: 60px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+
+            .modal-content {
+                margin: auto;
+                display: block;
+                max-width: 80%;
+                max-height: 80%;
+            }
+
+            .modal-content, .close {
+                animation-name: zoom;
+                animation-duration: 0.6s;
+            }
+
+            @keyframes zoom {
+                from {transform: scale(0)}
+                to {transform: scale(1)}
+            }
+
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #fff;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #about-container{
+        padding: 0 20px;
+        
+    }
+
+    #contact-container{
+
+    }
+}
