@@ -21,25 +21,51 @@ Vue.createApp({
             ],
         }
     },
+    methods: {
+    }
 })
-.component('photo-element',{
+.component('photo-element', {
     template: '#photo-template',
-    props: ['label', 'technique', 'source'],
-    data(){
-        return{
+    props: ['label', 'technique', 'source', 'index', 'drawings'],
+    data() {
+        return {
             isModalOpen: false,
             currentImage: '',
-        }
+            currentIndex: 0,
+        };
     },
-    methods:{
-        openModal(src){
-            this.currentImage = this.drawings.source;
+    methods: {
+        openModal(image, index) {
+            this.currentImage = image;
             this.isModalOpen = true;
+            this.currentIndex = index;
+            this.$nextTick(() => {
+                this.$refs.modal.focus();
+            });
         },
-        closeModal(){
+
+        closeModal() {
             this.isModalOpen = false;
-        }
-    }
+        },
+
+        swipeModalLeft(){
+            if (this.currentIndex > 0) {
+                this.currentIndex -= 1;
+            } else {
+                this.currentIndex = this.drawings.length - 1;
+            }
+            this.currentImage = this.drawings[this.currentIndex].source;
+        },
+
+        swipeModalRight(){
+            if (this.currentIndex < this.drawings.length - 1) {
+                this.currentIndex += 1;
+            } else {
+                this.currentIndex = 0;
+            }
+            this.currentImage = this.drawings[this.currentIndex].source;
+        },
+    },
 })
 .mount('#app-czimpsky')
 
