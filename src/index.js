@@ -40,6 +40,8 @@ Vue.createApp({
             ],
             categoryDisplayed: 'draw',
             scrolledDown: false,
+            isModalOpen: false,
+            isMenuOpen: false
         }
     },
 
@@ -75,12 +77,25 @@ Vue.createApp({
             } else {
                 this.scrolledDown = false;
             }
+        },
+
+        handleModalOpen() {
+            this.isModalOpen = !this.isModalOpen;
+        },
+
+        toggleMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
+
+        closeMenu() {
+            this.isMenuOpen = false;
         }
     }
 })
 .component('gallery-element', {
     template: '#gallery-template',
     props: ['label', 'technique', 'source', 'type', 'index', 'getFilteredDrawings'],
+    emits: ['update:isModalOpen'],
     data() {
         return {
             isModalOpen: false,
@@ -92,6 +107,7 @@ Vue.createApp({
         openModal(image, index) {
             this.currentImage = image;
             this.isModalOpen = true;
+            this.$emit('update:isModalOpen', true);
             this.currentIndex = index;
             this.$nextTick(() => {
                 this.$refs.modal.focus();
@@ -100,6 +116,7 @@ Vue.createApp({
 
         closeModal() {
             this.isModalOpen = false;
+            this.$emit('update:isModalOpen', false);
         },
 
         swipeModalLeft(){
