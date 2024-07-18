@@ -3,7 +3,6 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
 - [Installation and Setup](#installation-and-setup)
 - [Usage](#usage)
 - [Features](#features)
@@ -20,3 +19,36 @@ This project is a personal portfolio website for **Maciek Grabowski**. It showca
 - **Bootstrap** (version 5.3.3)
 - **Font Awesome** (version 6.5.2)
 - **Google Maps Embed API**
+
+## Installation and Setup
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Czimpsky/Czimpsky_www.git
+
+2. **Navigate to the project directory:**
+   ```bash
+   cd portfolio-website
+
+3. **Open index.html in your browser:**
+   ```bash
+   open index.html
+
+## Usage
+- **Navigate** through different sections using the menu.
+- **View portfolio items** by clicking on the categories: Drawings, Projects, Frontend.
+- **Contact** Maciek using the provided email or phone number, or use the social media links.
+
+## Features
+- **Responsive Design:** The website is fully responsive and works on all devices.
+- **Vue.js Integration:** Dynamic components for the portfolio gallery.
+- **Bootstrap Framework:** Utilized for styling and layout.
+- **Font Awesome Icons:** Icons for social media links.
+- **Embedded Google Map:** Shows the location in the contact section.
+
+## Contact
+- **Email:** [maciek.grb@gmail.com](mailto:maciek.grb@gmail.com)
+- **Phone:** [+48 662 140 331](tel:+48662140331)
+- **Instagram:** [czimpsky](https://www.instagram.com/czimpsky/?hl=en)
+- **LinkedIn:** [Maciek Grabowski](https://www.linkedin.com/in/m-grabowski/)
+
+
